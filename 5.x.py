@@ -4,12 +4,11 @@
 #importing things.
 import os
 import time
+import sys
 
 
-#Boolean that determines if the main loop is going to run or if the program is going to stop.
-run = True
-runn = True
-runnn = True
+#Variable that determines what mode the main loop at the end will run in.
+mode = False
 
 #Function for clearing the terminal.
 def clear():
@@ -47,120 +46,150 @@ if text == "continue" or text == "Continue":
     clear()
 else:
     if text == "Exit":
-        runn = False
+        sys.exit()
     if text == "exit":
-        runn = False
+        sys.exit()
 
     if text == "Quit":
-        runn = False
+        sys.exit()
     if text == "quit":
-        runn = False
+        sys.exit()
 
     if text == "Stop":
-        runn = False
+        sys.exit()
     if text == "stop":
-        runn = False
-    while runn == True:
+        sys.exit()
+    while True:
         text = input("Enter string here: ")
         if text == "Exit":
-            runn = False
+            sys.exit()
         if text == "exit":
-            runn = False
+            sys.exit()
 
         if text == "Quit":
-            runn = False
+            sys.exit()
         if text == "quit":
-            runn = False
+            sys.exit()
 
         if text == "Stop":
-            runn = False
+            sys.exit()
         if text == "stop":
-            runn = False
+            sys.exit()
 
         if text == "continue":
-            runn = False
             clear()
+            break
         if text == "Continue":
-            runn = False
             clear()
-
+            break
 
 clear()
-runn = True
+
 #Asking the user what they would like to do with the string they will enter later.
-if run == True and runn == True:
-    print("What would you like to do?\n\nEnter \"1\" if you want to remove all spaces from your string of choice\n")
+print("What would you like to do?\n\nEnter \"1\" if you want to remove all spaces from your string of choice\n\nEnter \"2\" if you want to replace all spaces with \"FUCK\"\n")
 
+text = input("Enter string here: ")
+
+if text == "Exit":
+    sys.exit()
+if text == "exit":
+    sys.exit()
+
+if text == "Quit":
+    sys.exit()
+if text == "quit":
+    sys.exit()
+
+if text == "Stop":
+    sys.exit()
+if text == "stop":
+    sys.exit()
+
+if text == "1":
+    clear()
+    mode = 1
+if text == "2":
+    clear()
+    mode = 2
+
+while mode == False:
     text = input("Enter string here: ")
-
     if text == "Exit":
-        run = False
+        sys.exit()
     if text == "exit":
-        run = False
+        sys.exit()
 
     if text == "Quit":
-        run = False
+        sys.exit()
     if text == "quit":
-        run = False
+        sys.exit()
 
     if text == "Stop":
-        run = False
+        sys.exit()
     if text == "stop":
-        run = False
-
+        sys.exit()
     if text == "1":
-        clear()
-    else:
-        while runnn == True:
-            text = input("Enter string here: ")
-            if text == "Exit":
-                runnn = False
-                run = False
-            if text == "exit":
-                runnn = False
-                run = False
-
-            if text == "Quit":
-                runnn = False
-                run = False
-            if text == "quit":
-                runnn = False
-                run = False
-
-            if text == "Stop":
-                runnn = False
-                run = False
-            if text == "stop":
-                runnn = False
-                run = False
-            if text == "1":
-                runnn = False
+        mode = 1
+        break
+    if text == "2":
+        mode = 2
+        break
 
 clear()
-print("You have entered \"space remover\" mode")
-time.sleep(3)
+if mode == 1:
+    print("You have entered \"Space remover\" mode")
+    time.sleep(3)
+if mode == 2:
+    print("You have entered \"FUCK\" mode")
+    time.sleep(3)
+clear()
 
 #Main program loop.
-while run == True:
+while True:
+    if mode == 1:
+        text = input("Enter string here: ")
 
-    text = input("Enter string here: ")
+        if text == "Exit":
+            sys.exit()
+        if text == "exit":
+            sys.exit()
 
-    if text == "Exit":
-        run = False
-    if text == "exit":
-        run = False
+        if text == "Quit":
+            sys.exit()
+        if text == "quit":
+            sys.exit()
 
-    if text == "Quit":
-        run = False
-    if text == "quit":
-        run = False
+        if text == "Stop":
+            sys.exit()
+        if text == "stop":
+            sys.exit()
 
-    if text == "Stop":
-        run = False
-    if text == "stop":
-        run = False
+        thing = text.replace(" ", "")
 
-    thing = text.replace(" ", "")
+        print(f"\nThis is what your string looks like without spaces: \n\n{thing}")
+        time.sleep(5)
+        clear()
 
-    print(thing)
+    if mode == 2:
+        text = input("Enter string here: ")
 
+        if text == "Exit":
+            sys.exit()
+        if text == "exit":
+            sys.exit()
+
+        if text == "Quit":
+            sys.exit()
+        if text == "quit":
+            sys.exit()
+
+        if text == "Stop":
+            sys.exit()
+        if text == "stop":
+            sys.exit()
+
+        thing = text.replace(" ", " FUCK ")
+
+        print(f"\nThis is what your string looks like with FUCK instead of spaces: \n\n{thing}")
+        time.sleep(6)
+        clear()
